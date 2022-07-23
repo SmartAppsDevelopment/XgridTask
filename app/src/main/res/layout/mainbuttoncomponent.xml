@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="model"
+    type="com.example.xgridtask.data.MainButtonDataModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:onClick="@{()->model.click.invoke()}"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:background="@drawable/main_btn_shape">
+
+        <ImageView
+            android:id="@+id/iv_person"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            setImageFromModel="@{model.mainIcon}"
+            tools:src="@drawable/ic_baseline_person_outline_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txtcolor"
+            android:textSize="@dimen/_14ssp"
+            android:text="@{model.title}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_person"
+            app:layout_constraintEnd_toStartOf="@+id/iv_next"
+            app:layout_constraintStart_toEndOf="@id/iv_person"
+            app:layout_constraintTop_toTopOf="@id/iv_person"
+            tools:ignore="MissingConstraints"
+            tools:text="Umer Bilal" />
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:tint="@color/black"
+            android:src="@drawable/ic_baseline_navigate_next_24"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_person" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

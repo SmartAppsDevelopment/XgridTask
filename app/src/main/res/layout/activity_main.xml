@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <ImageView
+                android:layout_margin="@dimen/_30sdp"
+                android:src="@drawable/night_mode"
+                app:tint="@color/black"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_shape_view"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:background="@color/imgbg"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_baseline_person_outline_24"
+                app:contentPadding="@dimen/_18sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                app:strokeColor="@color/imgborder"
+                app:strokeWidth="@dimen/_6sdp"
+                app:tint="@color/imgborder" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/john_doe"
+                android:textColor="@color/txtcolor"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_shape_view" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@string/john_doe_example_com"
+                android:textColor="@color/txtcolor"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/upgrade_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topmargin"
+                android:background="@null"
+                android:backgroundTint="@color/upgradebuttonbg"
+                android:text="@string/upgrade_to_pro"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:cornerRadius="@dimen/btnradius"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <LinearLayout
+                android:id="@+id/btnlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upgrade_btn">
+
+                <include
+                    android:id="@+id/btn_privacy"
+                    layout="@layout/mainbuttoncomponent" />
+
+                <include
+                    android:id="@+id/btn_purchase"
+                    layout="@layout/mainbuttoncomponent" />
+
+                <include
+                    android:id="@+id/btn_help"
+                    layout="@layout/mainbuttoncomponent" />
+
+                <include
+                    android:id="@+id/btn_setting"
+                    layout="@layout/mainbuttoncomponent" />
+
+                <include
+                    android:id="@+id/btn_invite"
+                    layout="@layout/mainbuttoncomponent" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/topmargin"
+                android:background="@null"
+                android:backgroundTint="@color/logoutbtnbg"
+                android:text="@string/logout"
+                android:textAllCaps="false"
+                android:textColor="@color/logouttxtcolor"
+                android:textSize="@dimen/_12ssp"
+                app:cornerRadius="@dimen/btnradius"
+                app:layout_constraintTop_toBottomOf="@+id/btnlist" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
