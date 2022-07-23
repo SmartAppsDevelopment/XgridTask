@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import com.example.xgridtask.data.MainButtonDataModel
@@ -40,6 +41,23 @@ class MainActivity : AppCompatActivity() {
             showToast("Night Mode OFF")
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
+        updateIcon()
+    }
+
+    private fun updateIcon() {
+        if (getFromPrefIsNightMode()) {
+            dataBinding.nightmode.setColorFilter(
+                ContextCompat.getColor(this, R.color.white),
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
+        } else {
+            dataBinding.nightmode.setColorFilter(
+                ContextCompat.getColor(this, R.color.black),
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
+        }
+
+
     }
 
     //TODO Mapping Data From list To button
@@ -59,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                     showToast("Night Mode OFF")
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 }
+                updateIcon()
             }
         }
     }
